@@ -1,12 +1,14 @@
 package es.ies.puerto;
 
+import java.io.IOException;
+
 public class Ejercicio6 {
-    public static void main(String[] args) {
-        for (int i = 0; i < 5; i++) {
+    public void startWorkers(int numberOfWorkers) {
+        for (int i = 0; i < numberOfWorkers; i++) {
             try {
                 ProcessBuilder processBuilder = new ProcessBuilder("java", "WorkerClass");
                 processBuilder.start();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

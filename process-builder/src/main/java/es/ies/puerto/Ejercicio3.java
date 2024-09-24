@@ -1,16 +1,19 @@
 package es.ies.puerto;
 
 import java.io.File;
+import java.io.IOException;
 
 public class Ejercicio3 {
-    public static void main(String[] args) {
+    public static boolean executeAndRedirectToFile(String command, String filePath) {
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder("ls");
-            processBuilder.redirectOutput(new File("output.txt"));
+            ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
+            processBuilder.redirectOutput(new File(filePath));
             Process process = processBuilder.start();
-            process.waitFor();
-        } catch (Exception e) {
+            int exitCode = process.waitFor(); // Esperar a que termine el proceso
+            return exitCode == 0; // Retorna true si el proceso fue exitoso
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
+            return false; // Retornar false en caso de excepción
         }
     }
 }

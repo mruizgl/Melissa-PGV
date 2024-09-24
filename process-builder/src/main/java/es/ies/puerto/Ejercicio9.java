@@ -1,15 +1,20 @@
 package es.ies.puerto;
 
+import java.io.IOException;
+
 public class Ejercicio9 {
-    public static void main(String[] args) {
-        try {
-            ProcessBuilder processBuilder = new ProcessBuilder("ping", "-t", "google.com");
-            Process process = processBuilder.start();
-            Thread.sleep(10000); // Esperar 10 segundos
-            process.destroy(); // Terminar el proceso
-            System.out.println("Proceso terminado.");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    private final ProcessBuilder processBuilder;
+
+    public Ejercicio9(ProcessBuilder processBuilder) {
+        this.processBuilder = processBuilder;
+    }
+
+    public void executePing(long durationMillis) throws IOException, InterruptedException {
+        Process process = processBuilder.start();
+
+        Thread.sleep(durationMillis);
+
+        process.destroy();
+        System.out.println("Proceso terminado.");
     }
 }

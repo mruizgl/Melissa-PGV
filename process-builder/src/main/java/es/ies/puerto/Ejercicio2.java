@@ -1,16 +1,22 @@
 package es.ies.puerto;
 
+import java.io.IOException;
+
 public class Ejercicio2 {
-    public static void main(String[] args) {
+    public static boolean executeCommands(String[] commands) {
         try {
-            String[] commands = { "ping -c 4 google.com", "ls", "echo 'Proceso finalizado'" };
             for (String command : commands) {
                 ProcessBuilder processBuilder = new ProcessBuilder("sh", "-c", command);
                 Process process = processBuilder.start();
-                process.waitFor();
+                int exitCode = process.waitFor(); // Esperar a que termine el proceso
+                if (exitCode != 0) {
+                    return false; // Si el comando falla, retorna false
+                }
             }
-        } catch (Exception e) {
+            return true; // Retorna true si todos los comandos se ejecutaron correctamente
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
+            return false; // En caso de excepción, retornar false
         }
     }
     
