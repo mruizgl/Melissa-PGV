@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Ejercicio3 {
-    public static boolean executeAndRedirectToFile(String command, String filePath) {
+    public boolean executeAndRedirectToFile(String command, String filePath) {
         try {
             ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
             processBuilder.redirectOutput(new File(filePath));

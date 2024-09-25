@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: Ejercicio8Test
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE!
+Ejercicio8Test.testExecutePing_InterruptedException()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "java.lang.ProcessBuilder.start()" because "this.processBuilder" is null
+	at Ejercicio8Test.testExecutePing_InterruptedException(Ejercicio8Test.java:41)
+
+Ejercicio8Test.testExecutePing_IOException()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "java.lang.ProcessBuilder.start()" because "this.processBuilder" is null
+	at Ejercicio8Test.testExecutePing_IOException(Ejercicio8Test.java:32)
+

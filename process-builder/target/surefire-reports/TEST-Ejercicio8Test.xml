@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="Ejercicio5Test" time="0.007" errors="0" skipped="0">
+<testsuite tests="2" failures="2" name="Ejercicio8Test" time="0.001" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="17.0.10+7-Ubuntu-122.04.1"/>
@@ -57,6 +57,14 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.stdout.encoding" value="UTF-8"/>
   </properties>
-  <testcase classname="Ejercicio5Test" name="Ejercicio5Test.testExecuteCommandWithInvalidCommand" time="0.006"/>
-  <testcase classname="Ejercicio5Test" name="Ejercicio5Test.testExecuteCommandWithValidCommand" time="0.001"/>
+  <testcase classname="Ejercicio8Test" name="Ejercicio8Test.testExecutePing_InterruptedException" time="0.001">
+    <failure message="Cannot invoke &quot;java.lang.ProcessBuilder.start()&quot; because &quot;this.processBuilder&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.lang.ProcessBuilder.start()&quot; because &quot;this.processBuilder&quot; is null
+	at Ejercicio8Test.testExecutePing_InterruptedException(Ejercicio8Test.java:41)
+</failure>
+  </testcase>
+  <testcase classname="Ejercicio8Test" name="Ejercicio8Test.testExecutePing_IOException" time="0">
+    <failure message="Cannot invoke &quot;java.lang.ProcessBuilder.start()&quot; because &quot;this.processBuilder&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.lang.ProcessBuilder.start()&quot; because &quot;this.processBuilder&quot; is null
+	at Ejercicio8Test.testExecutePing_IOException(Ejercicio8Test.java:32)
+</failure>
+  </testcase>
 </testsuite>

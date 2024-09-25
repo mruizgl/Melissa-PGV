@@ -13,7 +13,8 @@ public class Ejercicio5Test {
 
     @Test
     public void testExecuteCommandWithInvalidCommand() {
-        String errorOutput = ejercicio5.executeCommand("comando_inexistente");
+        ejercicio5 = new Ejercicio5();
+        String errorOutput = ejercicio5.executeCommand("cat prueba");
 
         Assertions.assertNotNull(errorOutput, "Debería haber un mensaje de error.");
         Assertions.assertFalse(errorOutput.isEmpty(), "El mensaje de error no debería estar vacío.");
@@ -22,6 +23,7 @@ public class Ejercicio5Test {
 
     @Test
     public void testExecuteCommandWithValidCommand() {
+        ejercicio5 = new Ejercicio5();
         String errorOutput = ejercicio5.executeCommand("echo Hola");
 
         Assertions.assertTrue(errorOutput.isEmpty(), "No debería haber un mensaje de error para un comando válido.");

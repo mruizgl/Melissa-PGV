@@ -7,11 +7,11 @@ public class Ejercicio4 {
         try {
             ProcessBuilder processBuilder = new ProcessBuilder("java", programName, argument);
             Process process = processBuilder.start();
-            int exitCode = process.waitFor(); // Esperar a que el proceso finalice
-            return exitCode == 0; // Retorna true si el proceso fue exitoso
+            int exitCode = process.waitFor();
+            return exitCode == 0;
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
-            return false; // Retornar false en caso de excepción
+            return false;
         }
     }
 }

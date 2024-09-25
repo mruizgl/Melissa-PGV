@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Ejercicio5 {
-    public static String executeCommand(String command) {
+    public String executeCommand(String command) {
         StringBuilder errorOutput = new StringBuilder();
         try {
             ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));

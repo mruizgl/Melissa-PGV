@@ -1,24 +1,49 @@
 import es.ies.puerto.Ejercicio8;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.io.IOException;
+import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 public class Ejercicio8Test {
+    @Mock
+    private ProcessBuilder processBuilder;
+
+    @Mock
+    private Process process;
+
+    private Ejercicio8 ejercicio8;
+
+    @BeforeEach
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+        ejercicio8 = new Ejercicio8(processBuilder);
+    }
+
+
     @Test
-    public void testExecutePing() throws IOException, InterruptedException {
-        ProcessBuilder mockProcessBuilder = mock(ProcessBuilder.class);
-        Process mockProcess = mock(Process.class);
+    public void testExecutePing_IOException() throws IOException, InterruptedException {
+        when(processBuilder.start()).thenThrow(new IOException("Mock IOException"));
 
-        when(mockProcessBuilder.start()).thenReturn(mockProcess);
-        when(mockProcess.waitFor()).thenReturn(0); // 0 significa que terminó sin errores
-        Ejercicio8 pingExecutor = new Ejercicio8(mockProcessBuilder);
+        assertThrows(IOException.class, () -> ejercicio8.executePing());
 
-        long executionTime = pingExecutor.executePing();
+        verify(processBuilder).start();
+    }
 
-        verify(mockProcess).waitFor();
+    @Test
+    public void testExecutePing_InterruptedException() throws IOException, InterruptedException {
+        when(processBuilder.start()).thenReturn(process);
+        when(process.waitFor()).thenThrow(new InterruptedException("Mock InterruptedException"));
 
-        assert(executionTime >= 0);
+        assertThrows(InterruptedException.class, () -> ejercicio8.executePing());
+
+        verify(processBuilder).start();
+        verify(process).waitFor();
     }
 }

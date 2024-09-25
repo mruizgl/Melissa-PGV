@@ -5,10 +5,10 @@ import java.io.InputStreamReader;
 
 public class Ejercicio1 {
 
-    public static String ping(String host) {
+    public String ping(String host) {
         StringBuilder result = new StringBuilder();
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder("ping", host);
+            ProcessBuilder processBuilder = new ProcessBuilder("ping", "-c", "3", host);
             Process process = processBuilder.start();
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;

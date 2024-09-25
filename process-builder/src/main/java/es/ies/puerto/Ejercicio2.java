@@ -3,7 +3,7 @@ package es.ies.puerto;
 import java.io.IOException;
 
 public class Ejercicio2 {
-    public static boolean executeCommands(String[] commands) {
+    public boolean executeCommands(String[] commands) {
         try {
             for (String command : commands) {
                 ProcessBuilder processBuilder = new ProcessBuilder("sh", "-c", command);
