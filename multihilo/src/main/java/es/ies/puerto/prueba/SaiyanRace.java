@@ -16,7 +16,7 @@ public class SaiyanRace implements Runnable{
     public void run() {
         Random random = new Random();
         while (distance < GOAL && !winnerDeclared) {
-            int step = random.nextInt(10) + 1; // Avance aleatorio de 1 a 10
+            int step = random.nextInt(10) + 1;
             distance += step;
             System.out.println(name + " avanzó " + step + " metros. Distancia total: " + distance + " metros.");
 
