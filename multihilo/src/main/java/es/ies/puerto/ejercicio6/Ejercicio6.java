@@ -2,6 +2,10 @@ package es.ies.puerto.ejercicio6;
 
 import java.util.Random;
 
+/**
+ * Simula viajes en el tiempo de la TARDIS con varios hilos que representan diferentes épocas. Cada hilo debe intentar
+ * llegar al destino más rápido que los demás. La duración de cada viaje debe ser aleatoria y el destino final se alcanza cuando uno de los hilos termina su ejecución.
+ */
 public class Ejercicio6 {
     private static boolean clueFound = false;
     private static final Object lock = new Object();

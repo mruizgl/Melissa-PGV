@@ -21,7 +21,7 @@ public class Ejercicio10Test {
 
         String output = outContent.toString();
 
-      
+
         assertTrue(output.contains("ha ganado la batalla!"));
     }
 }
