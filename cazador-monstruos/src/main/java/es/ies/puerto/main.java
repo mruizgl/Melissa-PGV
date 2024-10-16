@@ -9,9 +9,11 @@ public class main {
         Mapa mapa = new Mapa(5);
         Monstruo monstruo = new Monstruo("Monstruo1");
 
+
         int[] ubicacionMonstruo = mapa.generarUbicacion();
         monstruo.setUbicacion(ubicacionMonstruo);
         mapa.moverPersonaje(monstruo.getNombre(), ubicacionMonstruo);
+
 
         Cazador cazador1 = new Cazador("Cazador1", mapa, monstruo);
         Cazador cazador2 = new Cazador("Cazador2", mapa, monstruo);
@@ -19,6 +21,7 @@ public class main {
         ExecutorService executor = Executors.newFixedThreadPool(2);
         executor.execute(cazador1);
         executor.execute(cazador2);
+
 
         Thread.sleep(15000);
         executor.shutdownNow();

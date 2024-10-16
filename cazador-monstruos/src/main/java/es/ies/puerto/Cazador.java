@@ -8,7 +8,6 @@ public class Cazador extends Thread{
     private final Monstruo monstruo;
     private final Random rand = new Random();
     private int monstruosAtrapados = 0;
-    private int[] ubicacion;
 
     public Cazador(String nombre, Mapa mapa, Monstruo monstruo) {
         this.nombre = nombre;
@@ -16,19 +15,16 @@ public class Cazador extends Thread{
         this.monstruo = monstruo;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
     @Override
     public void run() {
         try {
             while (!Thread.interrupted()) {
-                ubicacion = mapa.generarUbicacion();
-                mapa.moverPersonaje(nombre, ubicacion);
+                int[] nuevaUbicacion = mapa.generarUbicacion();
+                mapa.moverPersonaje(nombre, nuevaUbicacion);
                 mapa.mostrarMapa();
 
-                if (mapa.hayEncuentro(ubicacion, monstruo.getUbicacion())) {
+
+                if (mapa.hayEncuentro(nombre, monstruo.getNombre())) {
                     if (rand.nextInt(100) < 70) {
                         System.out.println(nombre + " atrapó un monstruo!");
                         monstruosAtrapados++;
