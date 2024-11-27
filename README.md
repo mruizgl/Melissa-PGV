@@ -7,7 +7,7 @@
    
 4. [📅 Tercer Trimestre](#-tercer-trimestre) loading...
    
-5. [📜 Licencia](#-licencia)
+5. [📜 Licencia Apache 2.0](#-licencia)
 6. [📞 Contacto](#-contacto)
 
 ## ✨ Introducción
@@ -22,6 +22,6 @@ Este proyecto está bajo la Licencia Apache 2.0. Consulta el archivo [LICENSE](.
 ## 📞 Contacto
 
 Desarrollado por **Melissa Ruiz**.  
-Si tienes preguntas o comentarios, puedes contactarme en [tu-email@ejemplo.com](mailto:melruizglez97@gmail.com).
+Si tienes preguntas o comentarios, puedes contactarme en [melruizglez97@gmail.com](mailto:melruizglez97@gmail.com).
 
 ---
