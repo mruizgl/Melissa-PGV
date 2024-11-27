@@ -28,7 +28,7 @@ Ejecutamos el siguiente comando para descargar la imagen de MariaDB y crear un c
 ```bash
 docker run --name mariadb-container -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATABASE=exampledb -p 3306:3306 -d mariadb:latest
 ```
-![alt text](image.png)
+![alt text](img/image.png)
 
 #### Explicación de los parámetros:
 - `docker run`: Crea y ejecuta un contenedor.
@@ -78,7 +78,7 @@ Ejecuta el siguiente comando para iniciar un contenedor de CloudBeaver:
 ```bash
 docker run -d --name cloudbeaver -p 8978:8978 dbeaver/cloudbeaver:latest
 ```
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 #### Explicación de los parámetros:
 - `docker run`: Crea y ejecuta un nuevo contenedor.
@@ -107,8 +107,8 @@ CONTAINER ID   IMAGE                          COMMAND           CREATED         
 - Abre un navegador web.
 - Navega a `http://localhost:8978`.
 - Sigue las instrucciones de configuración inicial.
-![alt text](image-3.png)
-![alt text](image-4.png)
+![alt text](img/image-3.png)
+![alt text](img/image-4.png)
 ---
 
 ## Conexión a MariaDB desde CloudBeaver
