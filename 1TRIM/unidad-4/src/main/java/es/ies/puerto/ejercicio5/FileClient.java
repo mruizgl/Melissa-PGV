@@ -4,6 +4,16 @@ import java.io.*;
 import java.net.Socket;
 import java.util.Random;
 
+/**
+ * Extiende (ServidorContinua extend Servidor) el ejercicio anterior para que el cliente y el servidor puedan mantener una conversación continua. El cliente podrá enviar varios mensajes al servidor, y el servidor devolverá cada mensaje hasta que el cliente envíe el mensaje "salir", lo cual cerrará la conexión.
+ *
+ * En este caso debenos de manejar conexiones continuas y gestionar la terminación de la comunicación.
+ *
+ * Ten en cuenta que debes de:
+ *
+ * Usa un bucle while en el servidor para mantener la conexión abierta.
+ * Implementa una condición de parada para finalizar el chat.
+ */
 public class FileClient {
     public static void main(String[] args) throws IOException {
         String serverAddress = "localhost";

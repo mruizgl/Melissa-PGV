@@ -7,7 +7,11 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-
+/**
+ * Extiende (ServidorContinua extend Servidor) el ejercicio anterior para que el cliente y el servidor puedan
+ * mantener una conversación continua. El cliente podrá enviar varios mensajes al servidor, y el servidor devolverá
+ * cada mensaje hasta que el cliente envíe el mensaje "salir", lo cual cerrará la conexión.
+ */
 public class ChatServer {
 
     public static void main(String[] args) throws IOException {

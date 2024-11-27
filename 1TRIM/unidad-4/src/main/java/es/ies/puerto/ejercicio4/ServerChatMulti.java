@@ -11,16 +11,21 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ServerChatMulti {
     private static final Set<PrintWriter> clientWriters = ConcurrentHashMap.newKeySet();
+    private static boolean running = true;
 
     public static void main(String[] args) {
         System.out.println("Servidor de chat iniciado...");
         try (ServerSocket serverSocket = new ServerSocket(2020)) {
-            while (true) {
+            while (running) {
                 new ClientHandler(serverSocket.accept()).start();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void stopServer() {
+        running = false;
     }
 
     private static class ClientHandler extends Thread {
@@ -40,6 +45,10 @@ public class ServerChatMulti {
 
                 String message;
                 while ((message = in.readLine()) != null) {
+                    if ("salir".equalsIgnoreCase(message)) {
+                        ServerChatMulti.stopServer(); // Detiene el servidor al recibir "salir"
+                        break;
+                    }
                     System.out.println("Mensaje recibido: " + message);
                     sendMessageToAllClients(message);
                 }
