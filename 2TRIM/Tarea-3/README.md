@@ -1,26 +1,26 @@
 # Índice
 
 1. [**Descargar e iniciar Apache Tomcat en Docker**](#1-descargar-e-iniciar-apache-tomcat-en-docker)
-   - [1.1. Ejecutar Apache Tomcat en un contenedor Docker](#11-ejecutar-apache-tomcat-en-un-contenedor-docker)  
-   - [1.2. Verificar que el contenedor esté corriendo](#12-verificar-que-el-contenedor-esté-corriendo)
+   - [1.1. Ejecutar Apache Tomcat en un contenedor Docker](#1.1-ejecutar-apache-tomcat-en-un-contenedor-docker)  
+   - [1.2. Verificar que el contenedor esté corriendo](#1.2-verificar-que-el-contenedor-esté-corriendo)
 
 2. [**Descargar una aplicación .war de ejemplo**](#2-descargar-una-aplicación-war-de-ejemplo)
    - [2.1. Descargar `sample.war` desde el sitio oficial de Apache Tomcat](#21-descargar-samplewar-desde-el-sitio-oficial-de-apache-tomcat)
 
 3. [**Copiar el archivo .war al contenedor**](#3-copiar-el-archivo-war-al-contenedor)
-   - [3.1. Usar el comando `docker cp` para copiar el archivo](#31-usar-el-comando-docker-cp-para-copiar-el-archivo)
-   - [3.2. Confirmar que el archivo fue copiado correctamente](#32-confirmar-que-el-archivo-fue-copiado-correctamente)
+   - [3.1. Usar el comando `docker cp` para copiar el archivo](#3.1-usar-el-comando-docker-cp-para-copiar-el-archivo)
+   - [3.2. Confirmar que el archivo fue copiado correctamente](#3.2-confirmar-que-el-archivo-fue-copiado-correctamente)
 
 4. [**Acceder a la aplicación**](#4-acceder-a-la-aplicación)
-   - [4.1. Verificar el despliegue automático de Tomcat](#41-verificar-el-despliegue-automático-de-tomcat)
-   - [4.2. Acceder a la aplicación en el navegador](#42-acceder-a-la-aplicación-en-el-navegador)
+   - [4.1. Verificar el despliegue automático de Tomcat](#4.1-verificar-el-despliegue-automático-de-tomcat)
+   - [4.2. Acceder a la aplicación en el navegador](#4.2-acceder-a-la-aplicación-en-el-navegador)
 
 5. [**Verificar logs en caso de problemas**](#5-verificar-logs-en-caso-de-problemas)
-   - [5.1. Inspeccionar los logs del contenedor para identificar errores](#51-inspeccionar-los-logs-del-contenedor-para-identificar-errores)
+   - [5.1. Inspeccionar los logs del contenedor para identificar errores](#5.1-inspeccionar-los-logs-del-contenedor-para-identificar-errores)
 
 6. [**Obtener la IP del contenedor**](#6-obtener-la-ip-del-contenedor)
-   - [6.1. Usar `docker inspect` para encontrar la IP del contenedor](#61-usar-docker-inspect-para-encontrar-la-ip-del-contenedor)
-   - [6.2. Acceder a la aplicación usando la IP del contenedor](#62-acceder-a-la-aplicación-usando-la-ip-del-contenedor)
+   - [6.1. Usar `docker inspect` para encontrar la IP del contenedor](#6.1-usar-docker-inspect-para-encontrar-la-ip-del-contenedor)
+   - [6.2. Acceder a la aplicación usando la IP del contenedor](#6.2-acceder-a-la-aplicación-usando-la-ip-del-contenedor)
 
 7. [**Resumen**](#7-resumen)
 
