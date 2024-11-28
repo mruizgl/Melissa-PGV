@@ -126,7 +126,7 @@ CONTAINER ID   IMAGE                          COMMAND           CREATED         
 ### 2. Verificar conexión
 - Haz clic en `Test Connection` para comprobar la conexión.
 - Si es exitosa, haz clic en `Finish`.
-
+![alt text](img/image44.png)
 ---
 
 ## Detener y eliminar contenedores
